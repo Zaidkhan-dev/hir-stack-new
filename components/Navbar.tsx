@@ -1,5 +1,7 @@
 
 import React, { useState } from 'react';
+import { X } from 'lucide-react';
+import { Subscription } from './Subscription';
 
 interface NavbarProps {
   scrolled: boolean;
@@ -7,6 +9,7 @@ interface NavbarProps {
 
 export const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'py-4 glass-card' : 'py-6 bg-transparent'}`}>
@@ -21,7 +24,7 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
           <a href="#courses" className="hover:text-blue-400 transition-colors">Courses</a>
           <a href="#advisor" className="hover:text-blue-400 transition-colors">Career Advice</a>
           <a href="#contact" className="hover:text-blue-400 transition-colors">Contact</a>
-          <button className="bg-blue-600 hover:bg-blue-500 px-6 py-2.5 rounded-full transition-all active:scale-95">
+          <button onClick={() => setShowModal(true)} className="bg-blue-600 hover:bg-blue-500 px-6 py-2.5 rounded-full transition-all active:scale-95">
             Join Now
           </button>
         </div>
@@ -43,7 +46,27 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
           <a href="#about" onClick={() => setMobileMenuOpen(false)} className="text-lg">About</a>
           <a href="#courses" onClick={() => setMobileMenuOpen(false)} className="text-lg">Courses</a>
           <a href="#advisor" onClick={() => setMobileMenuOpen(false)} className="text-lg">Career Advice</a>
-          <button className="bg-blue-600 w-full py-3 rounded-lg font-bold">Join Now</button>
+          <button onClick={() => { setMobileMenuOpen(false); setShowModal(true); }} className="bg-blue-600 w-full py-3 rounded-lg font-bold">Join Now</button>
+        </div>
+      )}
+
+      {/* Subscription Modal Popup */}
+      {showModal && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+          <div className="fixed inset-0 bg-black/80 backdrop-blur-md" onClick={() => setShowModal(false)} />
+          
+          <button 
+            onClick={() => setShowModal(false)}
+            className="fixed top-6 right-6 sm:top-8 sm:right-8 z-[200] p-3 bg-red-500/20 hover:bg-red-500/40 text-red-200 hover:text-white rounded-full transition-all hover:scale-110 shadow-lg shadow-black/50"
+          >
+            <X className="w-8 h-8" />
+          </button>
+
+          <div className="relative z-[150] w-full max-w-6xl my-auto animate-in zoom-in-95 duration-300">
+            <div className="scale-90 md:scale-95 origin-center">
+              <Subscription />
+            </div>
+          </div>
         </div>
       )}
     </nav>

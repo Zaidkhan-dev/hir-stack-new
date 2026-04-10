@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
-import { Hero } from './components/Hero';
-import { About } from './components/About';
-import { CourseModes } from './components/CourseModes';
-import { FeaturedCourses } from './components/FeaturedCourses';
-// import { CareerAdvisor } from './components/CareerAdvisor';
-import { Testimonials } from './components/Testimonials';
 import { Footer } from './components/Footer';
 import { CustomCursor } from './components/CustomCursor';
+import { Home } from './pages/Home';
+import { CourseDetails } from './pages/CourseDetails';
 // import { ChatBot } from './components/ChatBot';
 
 const App: React.FC = () => {
@@ -22,20 +19,18 @@ const App: React.FC = () => {
   }, []);
 
   return (
-    <div className="min-h-screen selection:bg-blue-500/30">
-      <CustomCursor />
-      <Navbar scrolled={scrolled} />
-      <main>
-        <Hero />
-        <About />
-        <CourseModes />
-        <FeaturedCourses />
-        {/* <CareerAdvisor /> */}
-        <Testimonials />
-      </main>
-      {/* <ChatBot /> */}
-      <Footer />
-    </div>
+    <BrowserRouter basename="/Hir-stack">
+      <div className="min-h-screen selection:bg-blue-500/30">
+        <CustomCursor />
+        <Navbar scrolled={scrolled} />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/course/:id" element={<CourseDetails />} />
+        </Routes>
+        {/* <ChatBot /> */}
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 };
 

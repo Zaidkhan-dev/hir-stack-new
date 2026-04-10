@@ -45,9 +45,9 @@ export const Hero: React.FC = () => {
         </p>
         
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-20 pointer-events-auto">
-          <button className="w-full sm:w-auto px-10 py-5 bg-blue-600 hover:bg-blue-500 text-white rounded-2xl font-bold text-lg transition-all shadow-2xl shadow-blue-600/30 active:scale-95">
+          <a href="#courses" className="w-full sm:w-auto px-10 py-5 bg-blue-600 hover:bg-blue-500 text-white rounded-2xl font-bold text-lg transition-all shadow-2xl shadow-blue-600/30 active:scale-95 inline-flex items-center justify-center">
             Explore Courses
-          </button>
+          </a>
           <button className="w-full sm:w-auto px-10 py-5 glass-card hover:bg-white/10 text-white rounded-2xl font-bold text-lg transition-all active:scale-95">
             Speak to an Expert
           </button>
