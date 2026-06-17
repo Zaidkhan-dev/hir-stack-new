@@ -2,12 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Play, Lock, Clock, BookOpen, Award, ArrowLeft, X } from 'lucide-react';
 import { courses } from '../data/courses';
-import { Subscription } from '../components/Subscription';
 
 export const CourseDetails: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const course = courses.find(c => c.id === id);
-  const [showModal, setShowModal] = useState(false);
   const [playingFreeVideo, setPlayingFreeVideo] = useState(false);
 
   useEffect(() => {
@@ -75,10 +73,10 @@ export const CourseDetails: React.FC = () => {
                 <div className="flex justify-between w-full items-center gap-3">
                   <span className="text-2xl sm:text-3xl font-bold text-white">{course.price}</span>
                   <button
-                    onClick={() => setShowModal(true)}
+                    onClick={() => window.dispatchEvent(new CustomEvent('open-join-modal', { detail: { courseTitle: course.title } }))}
                     className="bg-blue-600 hover:bg-blue-500 text-white px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl font-bold text-sm sm:text-base transition-all shadow-lg hover:shadow-blue-500/50"
                   >
-                    Subscribe Now
+                    Join Course Now
                   </button>
                 </div>
               </div>
@@ -102,7 +100,7 @@ export const CourseDetails: React.FC = () => {
               return (
                 <div
                   key={video.id}
-                  onClick={() => isFree ? setPlayingFreeVideo(true) : setShowModal(true)}
+                  onClick={() => isFree ? setPlayingFreeVideo(true) : window.dispatchEvent(new CustomEvent('open-join-modal', { detail: { courseTitle: course.title } }))}
                   className={`glass-card p-4 sm:p-6 rounded-xl sm:rounded-2xl flex items-center justify-between cursor-pointer group transition-all duration-300 ${
                     isFree
                       ? 'border-blue-500/20 hover:bg-white/5 hover:-translate-y-0.5 hover:shadow-[0_8px_25px_rgba(59,130,246,0.1)]'
@@ -150,31 +148,17 @@ export const CourseDetails: React.FC = () => {
                 Get access to all 20 professional courses, hundreds of hours of HD video content, hands-on labs, and private community access.
               </p>
               <button
-                onClick={() => setShowModal(true)}
+                onClick={() => window.dispatchEvent(new CustomEvent('open-join-modal', { detail: { courseTitle: course.title } }))}
                 className="bg-white text-black font-bold px-7 sm:px-8 py-3.5 sm:py-4 rounded-xl hover:scale-105 transition-transform duration-300 shadow-[0_0_30px_rgba(255,255,255,0.15)] text-sm sm:text-base"
               >
-                View Subscription Plans
+                Register & Inquire Now
               </button>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Subscription Modal */}
-      {showModal && (
-        <div className="fixed inset-0 z-[100] flex items-start justify-center overflow-y-auto py-6 px-4">
-          <div className="fixed inset-0 bg-black/85 backdrop-blur-md" onClick={() => setShowModal(false)} />
-          <button
-            onClick={() => setShowModal(false)}
-            className="fixed top-4 right-4 sm:top-6 sm:right-6 z-[200] p-2.5 sm:p-3 bg-white/10 hover:bg-red-500/40 text-white rounded-full border border-white/10 transition-all hover:scale-110"
-          >
-            <X className="w-5 h-5 sm:w-7 sm:h-7" />
-          </button>
-          <div className="relative z-[150] w-full max-w-5xl mt-12 animate-in zoom-in-95 duration-300">
-            <Subscription />
-          </div>
-        </div>
-      )}
+      {/* Centralized JoinModal is handled at App layout level */}
 
       {/* Video Modal */}
       {playingFreeVideo && (

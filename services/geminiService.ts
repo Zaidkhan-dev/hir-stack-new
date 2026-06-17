@@ -28,7 +28,7 @@ export class GeminiService {
     Provide a concise, encouraging response (max 150 words) that explains WHY that path fits them and what the first step is. Use professional yet approachable tone.`;
 
     if (!this.ai) {
-      return "Career advisor is temporarily unavailable. Please contact our team directly at support@hirstack.com for personalized guidance.";
+      return "Career advisor is temporarily unavailable. Please contact our team directly at info@hirstack.com for personalized guidance.";
     }
 
     try {

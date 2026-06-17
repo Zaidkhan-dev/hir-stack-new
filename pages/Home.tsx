@@ -3,7 +3,8 @@ import { Hero } from '../components/Hero';
 import { About } from '../components/About';
 import { CourseModes } from '../components/CourseModes';
 import { FeaturedCourses } from '../components/FeaturedCourses';
-import { Subscription } from '../components/Subscription';
+import { Contact } from '../components/Contact';
+// import { Subscription } from '../components/Subscription';
 
 export const Home: React.FC = () => {
   return (
@@ -12,7 +13,8 @@ export const Home: React.FC = () => {
       <About />
       <CourseModes />
       <FeaturedCourses />
-      <Subscription />
+      {/* <Subscription /> */}
+      <Contact />
     </main>
   );
 };

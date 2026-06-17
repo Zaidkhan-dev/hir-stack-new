@@ -2,7 +2,7 @@ import React from 'react';
 
 export const Footer: React.FC = () => {
   return (
-    <footer id="contact" className="pt-16 sm:pt-20 lg:pt-24 pb-10 bg-black border-t border-white/10">
+    <footer className="pt-16 sm:pt-20 lg:pt-24 pb-10 bg-black border-t border-white/10">
       <div className="container mx-auto px-5 sm:px-6">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12 mb-12 lg:mb-16">
 
@@ -12,7 +12,7 @@ export const Footer: React.FC = () => {
               <img src="/Hir-stack/logo-hirstack.png" alt="HirStack Logo" className="h-12 sm:h-14 w-auto" />
             </div>
             <p className="text-slate-500 leading-relaxed mb-5 text-sm sm:text-base">
-              Leading the IT training industry with world-class education and expert mentorship. Grooming the next generation of engineers.
+              Premier technical training and IT development institute based in Lucknow, India. Bridging the gap between academic learning and industry demands.
             </p>
             <div className="flex gap-3">
               {['Twitter', 'GitHub', 'LinkedIn'].map(social => (
@@ -38,13 +38,22 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Support */}
+          {/* Contact Details */}
           <div>
-            <h4 className="font-bold text-base sm:text-lg mb-4 sm:mb-6">Support</h4>
-            <ul className="space-y-3 text-slate-500 text-sm sm:text-base">
-              {['Help Center', 'Terms of Service', 'Privacy Policy', 'Contact Support'].map(label => (
-                <li key={label}><a href="#" className="hover:text-blue-400 transition-colors">{label}</a></li>
-              ))}
+            <h4 className="font-bold text-base sm:text-lg mb-4 sm:mb-6">Contact Us</h4>
+            <ul className="space-y-3.5 text-slate-500 text-xs sm:text-sm leading-relaxed">
+              <li className="flex gap-2">
+                <span className="font-semibold text-slate-400 shrink-0">Add:</span>
+                <span>S-49 2nd Floor, Neelgiri Complex, Faizabad Road, Indira Nagar, Lucknow - 226016</span>
+              </li>
+              <li className="flex gap-2">
+                <span className="font-semibold text-slate-400 shrink-0">Tel:</span>
+                <a href="tel:+918546004264" className="hover:text-blue-400 transition-colors">+91 - 8546004264</a>
+              </li>
+              <li className="flex gap-2">
+                <span className="font-semibold text-slate-400 shrink-0">Mail:</span>
+                <a href="mailto:info@hirstack.com" className="hover:text-blue-400 transition-colors">info@hirstack.com</a>
+              </li>
             </ul>
           </div>
 

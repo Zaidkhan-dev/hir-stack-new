@@ -30,7 +30,10 @@ export const CourseModes: React.FC = () => {
                 </li>
               ))}
             </ul>
-            <button className="w-full py-3.5 sm:py-4 border border-white/10 rounded-xl font-bold text-sm sm:text-base group-hover:bg-white group-hover:text-black transition-all">
+            <button 
+              onClick={() => window.open('https://www.google.com/maps/search/?api=1&query=S-49+2nd+Floor,+Neelgiri+Complex,+Faizabad+Road,+Indira+Nagar,+Lucknow,+Uttar+Pradesh+-+226016', '_blank')}
+              className="w-full py-3.5 sm:py-4 border border-white/10 rounded-xl font-bold text-sm sm:text-base group-hover:bg-white group-hover:text-black transition-all"
+            >
               Find a Center
             </button>
           </div>
@@ -55,7 +58,10 @@ export const CourseModes: React.FC = () => {
                 </li>
               ))}
             </ul>
-            <button className="w-full py-3.5 sm:py-4 border border-white/10 rounded-xl font-bold text-sm sm:text-base group-hover:bg-indigo-600 transition-all">
+            <button 
+              onClick={() => window.dispatchEvent(new CustomEvent('open-join-modal'))}
+              className="w-full py-3.5 sm:py-4 border border-white/10 rounded-xl font-bold text-sm sm:text-base group-hover:bg-indigo-600 transition-all"
+            >
               Browse Online Catalog
             </button>
           </div>

@@ -5,10 +5,13 @@ import { Footer } from './components/Footer';
 import { CustomCursor } from './components/CustomCursor';
 import { Home } from './pages/Home';
 import { CourseDetails } from './pages/CourseDetails';
+import { JoinModal } from './components/JoinModal';
 // import { ChatBot } from './components/ChatBot';
 
 const App: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [joinModalOpen, setJoinModalOpen] = useState(false);
+  const [preselectedCourse, setPreselectedCourse] = useState<string>('');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,6 +19,16 @@ const App: React.FC = () => {
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const handleOpen = (e: Event) => {
+      const customEvent = e as CustomEvent<{ courseTitle?: string }>;
+      setPreselectedCourse(customEvent.detail?.courseTitle || '');
+      setJoinModalOpen(true);
+    };
+    window.addEventListener('open-join-modal', handleOpen);
+    return () => window.removeEventListener('open-join-modal', handleOpen);
   }, []);
 
   return (
@@ -29,6 +42,12 @@ const App: React.FC = () => {
         </Routes>
         {/* <ChatBot /> */}
         <Footer />
+        
+        <JoinModal 
+          isOpen={joinModalOpen} 
+          onClose={() => setJoinModalOpen(false)} 
+          preselectedCourse={preselectedCourse} 
+        />
       </div>
     </BrowserRouter>
   );
