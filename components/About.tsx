@@ -25,7 +25,7 @@ export const About: React.FC = () => {
           <div className="w-full lg:w-1/2 relative">
             <div className="absolute -inset-1.5 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-3xl blur opacity-30 group-hover:opacity-100 transition duration-1000" />
             <img
-              src="/Hir-stack/phillo.jpeg"
+              src={`${import.meta.env.BASE_URL}phillo.jpeg`}
               alt="Learning Environment at Hir Stack"
               className="rounded-2xl sm:rounded-3xl shadow-2xl w-full grayscale hover:grayscale-0 transition-all duration-750 relative z-10"
             />

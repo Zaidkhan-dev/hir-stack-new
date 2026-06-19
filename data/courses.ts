@@ -8,6 +8,8 @@ export const dummyVideos = [
   { id: 'v5', title: 'Real-world Project', duration: '1:20:00' },
 ];
 
+const getAssetPath = (path: string) => `${import.meta.env.BASE_URL.replace(/\/$/, "")}/${path.replace(/^\//, "")}`;
+
 const baseCourses: Course[] = [
   {
     id: 'fullstack',
@@ -15,7 +17,7 @@ const baseCourses: Course[] = [
     description: "Learn to build complete web applications from frontend to backend.",
     level: "All Levels",
     duration: "6 Months",
-    image: "/Hir-stack/fullstack.jpeg",
+    image: getAssetPath("fullstack.jpeg"),
     price: "$2,499",
     videos: dummyVideos
   },
@@ -25,7 +27,7 @@ const baseCourses: Course[] = [
     description: "Master algorithms and model training to build intelligent systems.",
     level: "Intermediate",
     duration: "8 Months",
-    image: "/Hir-stack/ai.jpeg",
+    image: getAssetPath("ai.jpeg"),
     price: "$3,200",
     videos: dummyVideos
   },
@@ -35,7 +37,7 @@ const baseCourses: Course[] = [
     description: "Deploy scalable, reliable and secure applications on modern cloud infrastructure.",
     level: "Advanced",
     duration: "4 Months",
-    image: "/Hir-stack/cloud.jpeg",
+    image: getAssetPath("cloud.jpeg"),
     price: "$2,100",
     videos: dummyVideos
   },
@@ -45,7 +47,7 @@ const baseCourses: Course[] = [
     description: "Protect systems and networks from digital attacks.",
     level: "Beginner",
     duration: "5 Months",
-    image: "/Hir-stack/security.jpeg",
+    image: getAssetPath("security.jpeg"),
     price: "$2,800",
     videos: dummyVideos
   }
@@ -59,7 +61,7 @@ const generatedCourses: Course[] = Array.from({ length: 16 }).map((_, i) => {
     description: `A comprehensive guide and curriculum for Course ${num}.`,
     level: "Intermediate",
     duration: "3 Months",
-    image: "/Hir-stack/fullstack.jpeg", // using an existing image as placeholder
+    image: getAssetPath("fullstack.jpeg"), // using an existing image as placeholder
     price: "$1,999",
     videos: dummyVideos
   };

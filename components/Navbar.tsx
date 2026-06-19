@@ -18,19 +18,24 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'py-3 glass-card shadow-lg shadow-black/40' : 'py-4 bg-transparent'}`}>
         <div className="container mx-auto px-4 sm:px-6 flex justify-between items-center">
           {/* Logo */}
-          <Link 
-            to="/" 
-            className="flex items-center active:scale-95 transition-transform cursor-pointer"
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          >
-            <img src="/Hir-stack/logo-hirstack.png" alt="HirStack Logo" className="h-12 sm:h-14 w-auto" />
-          </Link>
+          <div className="flex items-center justify-start shrink-0 max-w-[180px] sm:max-w-[220px] overflow-hidden">
+            <Link 
+              to="/" 
+              className="flex items-center active:scale-95 transition-transform cursor-pointer w-full h-full"
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            >
+              <img 
+                src={`${import.meta.env.BASE_URL}logo-hirstack.png`} 
+                alt="HirStack Logo" 
+                className="h-12 sm:h-14 w-auto max-w-full object-contain shrink-0" 
+              />
+            </Link>
+          </div>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-6 lg:gap-8 font-medium text-sm lg:text-base">
             <a href="#about" className="text-slate-300 hover:text-blue-400 transition-colors">About</a>
             <a href="#courses" className="text-slate-300 hover:text-blue-400 transition-colors">Courses</a>
-            <a href="#advisor" className="text-slate-300 hover:text-blue-400 transition-colors">Career Advice</a>
             <a href="#contact" className="text-slate-300 hover:text-blue-400 transition-colors">Contact</a>
             <button
               onClick={triggerJoinModal}
@@ -53,7 +58,7 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
         {/* Mobile Menu — full-screen overlay feel */}
         {mobileMenuOpen && (
           <div className="md:hidden absolute top-full left-0 right-0 bg-[#020617]/95 backdrop-blur-xl border-b border-white/10 px-6 py-6 flex flex-col gap-1 shadow-2xl">
-            {['About', 'Courses', 'Career Advice', 'Contact'].map((label) => (
+            {['About', 'Courses', 'Contact'].map((label) => (
               <a
                 key={label}
                 href={`#${label.toLowerCase().replace(/ /g, '')}`}

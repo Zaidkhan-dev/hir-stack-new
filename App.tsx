@@ -31,8 +31,10 @@ const App: React.FC = () => {
     return () => window.removeEventListener('open-join-modal', handleOpen);
   }, []);
 
+  const basename = import.meta.env.BASE_URL.replace(/\/$/, "");
+
   return (
-    <BrowserRouter basename="/Hir-stack">
+    <BrowserRouter basename={basename}>
       <div className="min-h-screen selection:bg-blue-500/30">
         <CustomCursor />
         <Navbar scrolled={scrolled} />
