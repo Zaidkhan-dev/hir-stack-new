@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Phone, User, Mail, BookOpen, CheckCircle, HelpCircle } from 'lucide-react';
-import { CareerAdvisor } from '../components/CareerAdvisor';
+import { ArrowLeft, Phone, User, Mail, BookOpen, CheckCircle, HelpCircle, Briefcase, GraduationCap, Award } from 'lucide-react';
 import { WEB3FORMS_ACCESS_KEY } from '../config';
 
 export const CareerAdvice: React.FC = () => {
@@ -96,13 +95,102 @@ export const CareerAdvice: React.FC = () => {
             Design Your Professional Path
           </h1>
           <p className="text-base sm:text-lg lg:text-xl text-slate-400 leading-relaxed max-w-3xl mx-auto">
-            Stuck at a crossroads or trying to land your dream role in tech? Our academic mentors and AI advisor are here to map out a concrete pathway tailored to your interests and aspirations.
+            Stuck at a crossroads or trying to land your dream role in tech? Read our guide below and schedule a session with our Lucknow mentoring squad to secure your placement roadmap.
           </p>
         </div>
 
-        {/* AI Advisor Integration */}
-        <div className="mb-16 sm:mb-24">
-          <CareerAdvisor />
+        {/* Career Advice Article Section */}
+        <div className="max-w-4xl mx-auto mb-16 sm:mb-24 space-y-12">
+          
+          {/* Main Article Banner */}
+          <div className="glass-card rounded-[32px] p-8 sm:p-12 border border-white/10 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-80 h-80 bg-blue-500/5 blur-[120px] rounded-full pointer-events-none" />
+            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6 flex items-center gap-3">
+              <Briefcase className="w-7 h-7 sm:w-8 sm:h-8 text-blue-400" />
+              Navigating Your IT Career Path in 2026
+            </h2>
+            <p className="text-slate-300 leading-relaxed text-sm sm:text-base mb-8">
+              The technology landscape is shifting faster than ever. With the rise of AI-assisted coding, cloud-native scale, and highly interactive frontend experiences, companies are no longer looking for generalists. They seek specialists who understand how to build, optimize, and deploy real applications. Here is our structured guide to choosing the right specialization:
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              
+              {/* Option 1 */}
+              <div className="p-6 bg-slate-900/60 rounded-2xl border border-white/5 space-y-3 hover:border-blue-500/30 transition-all">
+                <div className="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-400">
+                  <BookOpen className="w-5 h-5" />
+                </div>
+                <h3 className="text-lg font-bold text-white">Full Stack Web Development</h3>
+                <p className="text-xs text-slate-400 leading-relaxed">
+                  Best for creators who want to build end-to-end web applications. You will learn to construct modern user interfaces using React and Tailwind CSS, and handle server logic with Node.js and Express.
+                </p>
+                <div className="text-xs text-blue-400 font-semibold pt-1">Typical roles: Frontend Engineer, Backend Developer, Full Stack Engineer</div>
+              </div>
+
+              {/* Option 2 */}
+              <div className="p-6 bg-slate-900/60 rounded-2xl border border-white/5 space-y-3 hover:border-indigo-500/30 transition-all">
+                <div className="w-10 h-10 rounded-xl bg-indigo-500/10 flex items-center justify-center text-indigo-400">
+                  <GraduationCap className="w-5 h-5" />
+                </div>
+                <h3 className="text-lg font-bold text-white">Data Science & Machine Learning</h3>
+                <p className="text-xs text-slate-400 leading-relaxed">
+                  Perfect for problem solvers who enjoy data-driven logic. Focuses on statistical modeling, data visualization, Python libraries, and building predictive models.
+                </p>
+                <div className="text-xs text-indigo-400 font-semibold pt-1">Typical roles: Data Analyst, ML Engineer, Data Scientist</div>
+              </div>
+
+              {/* Option 3 */}
+              <div className="p-6 bg-slate-900/60 rounded-2xl border border-white/5 space-y-3 hover:border-purple-500/30 transition-all">
+                <div className="w-10 h-10 rounded-xl bg-purple-500/10 flex items-center justify-center text-purple-400">
+                  <Award className="w-5 h-5" />
+                </div>
+                <h3 className="text-lg font-bold text-white">Cloud Engineering & DevOps</h3>
+                <p className="text-xs text-slate-400 leading-relaxed">
+                  Crucial for scaling and deploying systems safely. Focuses on AWS/Azure architectures, Kubernetes, CI/CD pipelines, and infrastructure management.
+                </p>
+                <div className="text-xs text-purple-400 font-semibold pt-1">Typical roles: Cloud Developer, DevOps Engineer, Site Reliability Engineer</div>
+              </div>
+
+              {/* Option 4 */}
+              <div className="p-6 bg-slate-900/60 rounded-2xl border border-white/5 space-y-3 hover:border-cyan-500/30 transition-all">
+                <div className="w-10 h-10 rounded-xl bg-cyan-500/10 flex items-center justify-center text-cyan-400">
+                  <Phone className="w-5 h-5" />
+                </div>
+                <h3 className="text-lg font-bold text-white">Mobile Development & Security</h3>
+                <p className="text-xs text-slate-400 leading-relaxed">
+                  Best for crafting mobile experiences and protecting data. Includes building cross-platform apps and understanding secure coding concepts.
+                </p>
+                <div className="text-xs text-cyan-400 font-semibold pt-1">Typical roles: iOS/Android Developer, Cyber Analyst</div>
+              </div>
+
+            </div>
+          </div>
+
+          {/* Guide Steps */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="glass-card rounded-2xl p-6 border border-white/5 text-center space-y-3">
+              <div className="w-8 h-8 rounded-full bg-slate-800 text-slate-300 font-bold flex items-center justify-center mx-auto text-sm">1</div>
+              <h4 className="font-bold text-white text-base">Select Your Domain</h4>
+              <p className="text-xs text-slate-400 leading-relaxed">
+                Choose a track that aligns with your interest—whether visual UI design or deep logical programming.
+              </p>
+            </div>
+            <div className="glass-card rounded-2xl p-6 border border-white/5 text-center space-y-3">
+              <div className="w-8 h-8 rounded-full bg-slate-800 text-slate-300 font-bold flex items-center justify-center mx-auto text-sm">2</div>
+              <h4 className="font-bold text-white text-base">Build Portfolio Projects</h4>
+              <p className="text-xs text-slate-400 leading-relaxed">
+                Work on industry projects to display your skills. A solid GitHub portfolio beats any certification.
+              </p>
+            </div>
+            <div className="glass-card rounded-2xl p-6 border border-white/5 text-center space-y-3">
+              <div className="w-8 h-8 rounded-full bg-slate-800 text-slate-300 font-bold flex items-center justify-center mx-auto text-sm">3</div>
+              <h4 className="font-bold text-white text-base">Leverage Mentor Support</h4>
+              <p className="text-xs text-slate-400 leading-relaxed">
+                Receive hands-on guidance on resume tailoring, mock interviews, and reference connections.
+              </p>
+            </div>
+          </div>
+
         </div>
 
         {/* Callback Section */}

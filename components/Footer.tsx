@@ -96,7 +96,7 @@ export const Footer: React.FC = () => {
 
         {/* Bottom bar */}
         <div className="pt-6 sm:pt-8 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-3 text-slate-600 text-xs sm:text-sm text-center sm:text-left">
-          <p>© 2024 hirstack Training Institute. All rights reserved.</p>
+          <p>© 2026 hirstack Training Institute. All rights reserved.</p>
           <p>Made with passion for the tech community.</p>
         </div>
       </div>
