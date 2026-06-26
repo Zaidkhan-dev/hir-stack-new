@@ -1,6 +1,11 @@
 import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 export const Footer: React.FC = () => {
+  const location = useLocation();
+  const isHome = location.pathname === '/';
+  const base = import.meta.env.BASE_URL;
+
   return (
     <footer className="pt-16 sm:pt-20 lg:pt-24 pb-10 bg-black border-t border-white/10">
       <div className="container mx-auto px-5 sm:px-6">
@@ -36,9 +41,18 @@ export const Footer: React.FC = () => {
           <div>
             <h4 className="font-bold text-base sm:text-lg mb-4 sm:mb-6">Quick Links</h4>
             <ul className="space-y-3 text-slate-500 text-sm sm:text-base">
-              {[['#about', 'About Us'], ['#courses', 'Browse Courses'], ['#', 'Admissions'], ['#', 'Job Portal']].map(([href, label]) => (
-                <li key={label}><a href={href} className="hover:text-blue-400 transition-colors">{label}</a></li>
-              ))}
+              <li>
+                <a href={isHome ? "#about" : `${base}#about`} className="hover:text-blue-400 transition-colors">About Us</a>
+              </li>
+              <li>
+                <a href={isHome ? "#courses" : `${base}#courses`} className="hover:text-blue-400 transition-colors">Browse Courses</a>
+              </li>
+              <li>
+                <Link to="/career-advice" className="hover:text-blue-400 transition-colors">Career Advice</Link>
+              </li>
+              <li>
+                <a href={isHome ? "#contact" : `${base}#contact`} className="hover:text-blue-400 transition-colors">Admissions / Contact</a>
+              </li>
             </ul>
           </div>
 

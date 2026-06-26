@@ -5,8 +5,9 @@ import { Footer } from './components/Footer';
 import { CustomCursor } from './components/CustomCursor';
 import { Home } from './pages/Home';
 import { CourseDetails } from './pages/CourseDetails';
+import { CareerAdvice } from './pages/CareerAdvice';
 import { JoinModal } from './components/JoinModal';
-// import { ChatBot } from './components/ChatBot';
+import { ChatBot } from './components/ChatBot';
 
 const App: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -41,8 +42,9 @@ const App: React.FC = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/course/:id" element={<CourseDetails />} />
+          <Route path="/career-advice" element={<CareerAdvice />} />
         </Routes>
-        {/* <ChatBot /> */}
+        <ChatBot />
         <Footer />
         
         <JoinModal 

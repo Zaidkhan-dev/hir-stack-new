@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { X, Menu } from 'lucide-react';
 
 interface NavbarProps {
@@ -8,6 +8,9 @@ interface NavbarProps {
 
 export const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const isHome = location.pathname === '/';
+  const base = import.meta.env.BASE_URL;
 
   const triggerJoinModal = () => {
     window.dispatchEvent(new CustomEvent('open-join-modal'));
@@ -34,9 +37,10 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-6 lg:gap-8 font-medium text-sm lg:text-base">
-            <a href="#about" className="text-slate-300 hover:text-blue-400 transition-colors">About</a>
-            <a href="#courses" className="text-slate-300 hover:text-blue-400 transition-colors">Courses</a>
-            <a href="#contact" className="text-slate-300 hover:text-blue-400 transition-colors">Contact</a>
+            <a href={isHome ? "#about" : `${base}#about`} className="text-slate-300 hover:text-blue-400 transition-colors">About</a>
+            <a href={isHome ? "#courses" : `${base}#courses`} className="text-slate-300 hover:text-blue-400 transition-colors">Courses</a>
+            <Link to="/career-advice" className="text-slate-300 hover:text-blue-400 transition-colors">Career Advice</Link>
+            <a href={isHome ? "#contact" : `${base}#contact`} className="text-slate-300 hover:text-blue-400 transition-colors">Contact</a>
             <button
               onClick={triggerJoinModal}
               className="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2.5 rounded-full font-bold transition-all active:scale-95 shadow-lg shadow-blue-600/30"
@@ -58,16 +62,34 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
         {/* Mobile Menu — full-screen overlay feel */}
         {mobileMenuOpen && (
           <div className="md:hidden absolute top-full left-0 right-0 bg-[#020617]/95 backdrop-blur-xl border-b border-white/10 px-6 py-6 flex flex-col gap-1 shadow-2xl">
-            {['About', 'Courses', 'Contact'].map((label) => (
-              <a
-                key={label}
-                href={`#${label.toLowerCase().replace(/ /g, '')}`}
-                onClick={() => setMobileMenuOpen(false)}
-                className="text-slate-200 text-lg font-medium py-3 border-b border-white/5 hover:text-blue-400 transition-colors"
-              >
-                {label}
-              </a>
-            ))}
+            <a
+              href={isHome ? "#about" : `${base}#about`}
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-slate-200 text-lg font-medium py-3 border-b border-white/5 hover:text-blue-400 transition-colors"
+            >
+              About
+            </a>
+            <a
+              href={isHome ? "#courses" : `${base}#courses`}
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-slate-200 text-lg font-medium py-3 border-b border-white/5 hover:text-blue-400 transition-colors"
+            >
+              Courses
+            </a>
+            <Link
+              to="/career-advice"
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-slate-200 text-lg font-medium py-3 border-b border-white/5 hover:text-blue-400 transition-colors"
+            >
+              Career Advice
+            </Link>
+            <a
+              href={isHome ? "#contact" : `${base}#contact`}
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-slate-200 text-lg font-medium py-3 border-b border-white/5 hover:text-blue-400 transition-colors"
+            >
+              Contact
+            </a>
             <div className="pt-4">
               <button
                 onClick={() => { setMobileMenuOpen(false); triggerJoinModal(); }}
