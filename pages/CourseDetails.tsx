@@ -70,11 +70,10 @@ export const CourseDetails: React.FC = () => {
             <div className="relative h-[240px] sm:h-[320px] lg:h-[400px] w-full rounded-2xl overflow-hidden glass-card shadow-2xl">
               <img src={course.image} alt={course.title} className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent flex items-end p-5 sm:p-8">
-                <div className="flex justify-between w-full items-center gap-3">
-                  <span className="text-2xl sm:text-3xl font-bold text-white">{course.price}</span>
+                <div className="flex justify-center w-full items-center">
                   <button
                     onClick={() => window.dispatchEvent(new CustomEvent('open-join-modal', { detail: { courseTitle: course.title } }))}
-                    className="bg-blue-600 hover:bg-blue-500 text-white px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl font-bold text-sm sm:text-base transition-all shadow-lg hover:shadow-blue-500/50"
+                    className="w-full bg-blue-600 hover:bg-blue-500 text-white py-3 rounded-xl font-bold text-sm sm:text-base transition-all shadow-lg hover:shadow-blue-500/50 text-center"
                   >
                     Join Course Now
                   </button>

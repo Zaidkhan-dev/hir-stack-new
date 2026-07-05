@@ -11,6 +11,7 @@ export interface Course {
   description: string;
   duration: string;
   level: 'Beginner' | 'Intermediate' | 'Advanced' | 'All Levels' | string;
+  category?: string;
   tags?: string[];
   icon?: string;
   image?: string;
