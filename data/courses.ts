@@ -11,6 +11,44 @@ const generateDummyVideos = (courseId: string, courseTitle: string) => [
 ];
 
 export const courses: Course[] = [
+  // Top level (No category - shown only in All section at the top)
+  {
+    id: 'fullstack',
+    title: "Full Stack Development",
+    description: "Master modern web development from database to user interface. Build responsive frontends with React and robust backends with Node.js/Express.",
+    duration: "6 Months",
+    level: "All Levels",
+    image: getAssetPath("fullstack.jpeg"),
+    videos: generateDummyVideos('fullstack', 'Full Stack Development')
+  },
+  {
+    id: 'ai-ml',
+    title: "AI and Machine Learning",
+    description: "Dive deep into neural networks, supervised/unsupervised learning, data analysis, and predictive models using Python and TensorFlow.",
+    duration: "8 Months",
+    level: "Intermediate",
+    image: getAssetPath("ai.jpeg"),
+    videos: generateDummyVideos('ai-ml', 'AI and Machine Learning')
+  },
+  {
+    id: 'cloud',
+    title: "Cloud Engineering",
+    description: "Architect secure, scalable, and resilient cloud infrastructures. Learn containerization, Kubernetes, CI/CD pipelines, and AWS/Azure deployment.",
+    duration: "4 Months",
+    level: "Advanced",
+    image: getAssetPath("cloud.jpeg"),
+    videos: generateDummyVideos('cloud', 'Cloud Engineering')
+  },
+  {
+    id: 'security',
+    title: "Cybersecurity",
+    description: "Protect systems, networks, and databases from advanced digital security threats. Learn penetration testing, ethical hacking, and threat mitigation.",
+    duration: "5 Months",
+    level: "Beginner",
+    image: getAssetPath("security.jpeg"),
+    videos: generateDummyVideos('security', 'Cybersecurity')
+  },
+
   // Civil Section
   {
     id: 'autocad-civil',

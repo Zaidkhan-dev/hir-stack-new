@@ -36,7 +36,7 @@ export const FeaturedCourses: React.FC = () => {
                   : 'bg-slate-900/50 border-white/5 text-slate-400 hover:text-slate-200 hover:border-white/10'
               }`}
             >
-              {cat} Section
+              {cat === 'All' ? 'All Courses' : `${cat} Section`}
             </button>
           ))}
         </div>
