@@ -247,7 +247,7 @@ export const CareerAdvice: React.FC = () => {
                         required
                         value={formData.name}
                         onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
-                        placeholder="Zaid Khan"
+                        placeholder="Full Name"
                         className="w-full bg-slate-900 border border-white/10 rounded-xl py-3.5 pl-11 pr-4 text-sm text-white focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition-all"
                       />
                     </div>
@@ -276,7 +276,7 @@ export const CareerAdvice: React.FC = () => {
                         type="email" 
                         value={formData.email}
                         onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
-                        placeholder="zaid@example.com"
+                        placeholder="example@gmail.com"
                         className="w-full bg-slate-900 border border-white/10 rounded-xl py-3.5 pl-11 pr-4 text-sm text-white focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition-all"
                       />
                     </div>
@@ -287,13 +287,31 @@ export const CareerAdvice: React.FC = () => {
                     <select 
                       value={formData.domain}
                       onChange={(e) => setFormData(prev => ({ ...prev, domain: e.target.value }))}
-                      className="w-full bg-slate-900 border border-white/10 rounded-xl py-3.5 px-4 text-sm text-white focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition-all cursor-pointer"
+                      className="w-full bg-slate-900 border border-white/10 rounded-xl py-3.5 px-4 text-sm text-white focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition-all cursor-pointer bg-slate-950"
                     >
-                      <option value="Full Stack Development">Full Stack Web Development</option>
-                      <option value="AI & Machine Learning">AI & Machine Learning</option>
-                      <option value="Cloud Engineering & DevOps">Cloud Engineering & DevOps</option>
-                      <option value="Cybersecurity">Cybersecurity Specialist</option>
-                      <option value="Mobile App Development">Mobile App Development</option>
+                      <optgroup label="Software Engineering">
+                        <option value="Full Stack Development">Full Stack Development</option>
+                        <option value="AI & Machine Learning">AI & Machine Learning</option>
+                        <option value="Cloud Engineering">Cloud Engineering</option>
+                        <option value="Cybersecurity">Cybersecurity</option>
+                      </optgroup>
+                      <optgroup label="Civil Engineering">
+                        <option value="AutoCAD/CIVIL">AutoCAD/CIVIL</option>
+                        <option value="BIM/CIVIL">BIM/CIVIL</option>
+                        <option value="MEP/CIVIL">MEP/CIVIL</option>
+                        <option value="Revit/CIVIL">Revit/CIVIL</option>
+                      </optgroup>
+                      <optgroup label="Mechanical Engineering">
+                        <option value="CAD-CAM-CAE/Mechanical">CAD-CAM-CAE/Mechanical</option>
+                        <option value="MEP/Mechanical">MEP/Mechanical</option>
+                        <option value="SolidWorks">SolidWorks</option>
+                        <option value="CATIA">CATIA</option>
+                        <option value="Ansys(Static Analysis)">Ansys(Static Analysis)</option>
+                      </optgroup>
+                      <optgroup label="Electrical Engineering">
+                        <option value="AutoCAD/Electrical">AutoCAD/Electrical</option>
+                        <option value="PLC">PLC</option>
+                      </optgroup>
                     </select>
                   </div>
 

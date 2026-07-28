@@ -198,10 +198,29 @@ export const JoinModal: React.FC<JoinModalProps> = ({ isOpen, onClose, preselect
                     className="bg-slate-950 border border-white/10 rounded-xl pl-10 sm:pl-12 pr-4 py-2.5 sm:py-3 w-full focus:outline-none focus:border-blue-500 text-slate-300 transition-colors text-xs sm:text-sm appearance-none cursor-pointer"
                   >
                     <option value="" disabled>Select a course</option>
-                    <option value="Full Stack Development">Full Stack Development</option>
-                    <option value="AI & Machine Learning">AI & Machine Learning</option>
-                    <option value="Cloud Engineering">Cloud Engineering</option>
-                    <option value="Cybersecurity Specialist">Cybersecurity Specialist</option>
+                    <optgroup label="Software Engineering">
+                      <option value="Full Stack Development">Full Stack Development</option>
+                      <option value="AI & Machine Learning">AI & Machine Learning</option>
+                      <option value="Cloud Engineering">Cloud Engineering</option>
+                      <option value="Cybersecurity">Cybersecurity</option>
+                    </optgroup>
+                    <optgroup label="Civil Engineering">
+                      <option value="AutoCAD/CIVIL">AutoCAD/CIVIL</option>
+                      <option value="BIM/CIVIL">BIM/CIVIL</option>
+                      <option value="MEP/CIVIL">MEP/CIVIL</option>
+                      <option value="Revit/CIVIL">Revit/CIVIL</option>
+                    </optgroup>
+                    <optgroup label="Mechanical Engineering">
+                      <option value="CAD-CAM-CAE/Mechanical">CAD-CAM-CAE/Mechanical</option>
+                      <option value="MEP/Mechanical">MEP/Mechanical</option>
+                      <option value="SolidWorks">SolidWorks</option>
+                      <option value="CATIA">CATIA</option>
+                      <option value="Ansys(Static Analysis)">Ansys(Static Analysis)</option>
+                    </optgroup>
+                    <optgroup label="Electrical Engineering">
+                      <option value="AutoCAD/Electrical">AutoCAD/Electrical</option>
+                      <option value="PLC">PLC</option>
+                    </optgroup>
                     <option value="Other">Other / General Query</option>
                   </select>
                   <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-slate-400">
