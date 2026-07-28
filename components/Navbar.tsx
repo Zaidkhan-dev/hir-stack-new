@@ -24,13 +24,13 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
           <div className="flex items-center justify-start shrink-0 max-w-[180px] sm:max-w-[220px] overflow-hidden">
             <Link 
               to="/" 
-              className="flex items-center active:scale-95 transition-transform cursor-pointer w-full h-full"
+              className="flex items-center active:scale-95 transition-transform cursor-pointer bg-white px-4 py-1.5 rounded-xl shadow-md border border-white/10"
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             >
               <img 
                 src={`${import.meta.env.BASE_URL}logo-hirstack.png`} 
                 alt="HirStack Logo" 
-                className="h-12 sm:h-14 w-auto max-w-full shrink-0 filter drop-shadow-[0_0_8px_rgba(59,130,246,0.35)]" 
+                className="h-8 sm:h-9 w-auto max-w-full object-contain shrink-0" 
               />
             </Link>
           </div>
