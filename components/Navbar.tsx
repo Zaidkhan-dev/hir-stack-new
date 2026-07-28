@@ -30,7 +30,7 @@ export const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
               <img 
                 src={`${import.meta.env.BASE_URL}logo-hirstack.png`} 
                 alt="HirStack Logo" 
-                className="h-12 sm:h-14 w-auto max-w-full shrink-0 filter drop-shadow-[0_0_2px_rgba(255,255,255,0.95)] drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]" 
+                className="h-12 sm:h-14 w-auto max-w-full shrink-0" 
               />
             </Link>
           </div>

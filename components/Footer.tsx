@@ -17,7 +17,7 @@ export const Footer: React.FC = () => {
               <img 
                 src={`${import.meta.env.BASE_URL}logo-hirstack.png`} 
                 alt="HirStack Logo" 
-                className="h-12 sm:h-14 w-auto max-w-full shrink-0 filter drop-shadow-[0_0_2px_rgba(255,255,255,0.95)] drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]" 
+                className="h-12 sm:h-14 w-auto max-w-full shrink-0" 
               />
             </div>
             <p className="text-slate-500 leading-relaxed mb-5 text-sm sm:text-base">
