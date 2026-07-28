@@ -13,11 +13,11 @@ export const Footer: React.FC = () => {
 
           {/* Brand — full width on smallest screens */}
           <div className="col-span-2 lg:col-span-1">
-            <div className="inline-flex items-center gap-2 mb-5 bg-white px-4 py-1.5 rounded-xl shadow-md border border-white/10 shrink-0">
+            <div className="flex items-center gap-2 mb-5 max-w-[180px] sm:max-w-[220px] overflow-hidden shrink-0">
               <img 
                 src={`${import.meta.env.BASE_URL}logo-hirstack.png`} 
                 alt="HirStack Logo" 
-                className="h-8 sm:h-9 w-auto max-w-full object-contain shrink-0" 
+                className="h-12 sm:h-14 w-auto max-w-full shrink-0 filter drop-shadow-[0_0_2px_rgba(255,255,255,0.95)] drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]" 
               />
             </div>
             <p className="text-slate-500 leading-relaxed mb-5 text-sm sm:text-base">
